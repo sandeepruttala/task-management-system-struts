@@ -5,11 +5,9 @@
 <html>
 <head>
   <style>
-    *{
-      color:white;
-    }
     h1, h2, h3, p {
       text-align: center;
+      color: white;
     }
 
     body {
@@ -17,6 +15,7 @@
     }
 
     table {
+      color: white;
       border-radius: 10px;
       border: none;
       border-spacing: 0;
@@ -71,6 +70,7 @@
     input[type="text"],
     textarea,
     select,
+    select[type='option'],
     input[type="datetime-local"],
     button {
       color: black;
