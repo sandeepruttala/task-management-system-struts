@@ -4,15 +4,12 @@ import models.Task;
 import models.connection;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.dialect.function.TimestampaddFunction;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @WebServlet("/completeTask")
 public class completeTask extends javax.servlet.http.HttpServlet {

@@ -1,18 +1,16 @@
 package services;
 
+import models.Task;
+import models.connection;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.io.Serial;
-import java.text.DateFormat;
-
-import models.Task;
-import models.connection;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 
 @WebServlet("/addTask")
