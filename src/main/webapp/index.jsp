@@ -21,10 +21,10 @@
       border-spacing: 0;
       /*border: 1px solid #ddd; !* Added border style *!*/
       margin-left: auto;
-      margin-right: auto; /* Center align the table */
-      border-collapse: separate; /* Collapse border spacing */
-      width: 80%; /* Adjusted width for better responsiveness */
-      margin-bottom: 20px; /* Added margin for better separation */
+      margin-right: auto;
+      border-collapse: separate;
+      width: 80%;
+      margin-bottom: 20px;
       background-color: dimgray;
     }
 
@@ -33,9 +33,8 @@
       border-collapse: separate;
       /*border-radius: 10px;*/
       box-shadow: 3px 13px 5px 0px rgba(0, 0, 0, 0.2);
-      padding: 8px; /* Increased padding for better readability */
-      text-align: left; /* Left-align table content */
-      /*border: 1px solid #ddd; !* Added border style *!*/
+      padding: 8px;
+      text-align: left;
     }
     th {
       -moz-border-radius-topleft:10px;
@@ -45,8 +44,8 @@
     }
 
     .task-form {
-      display: none; /* Hide form by default */
-      width: 80%; /* Adjusted form width for better responsiveness */
+      display: none;
+      width: 80%;
       margin: 10px auto 10px;
 
       padding: 20px;
@@ -79,30 +78,26 @@
       border-radius: 5px;
       border: 1px solid #ccc;
       margin: 0px 10px;
-      width: 10%; /* Adjusted width for better responsiveness */
-      box-sizing: border-box; /* Include padding in width calculation */
+      width: 10%;
+      box-sizing: border-box;
     }
 
     button {
       background-color: #007bff;
       color: #fff;
       width: 10%;
-      /*place it in the middle*/
         margin: auto;
       text-align: center;
       display: flex;
       justify-content: center;
       border: none;
       cursor: pointer;
-      font-size: 14px; /* Decreased font size */
-      padding: 5px 10px; /* Decreased padding */
+      font-size: 14px;
+      padding: 5px 10px;
     }
 
     button:hover {
       background-color: #0056b3;
-    }
-    #createForm.submit-btn{
-      width: 10%;
     }
   </style>
   <title>Task Management System</title>
@@ -111,7 +106,7 @@
 <h1>Task Management System</h1>
 
 <div>
-  <h2>List of Incomplete Tasks</h2>
+  <h2>List of Pending Tasks</h2>
   <table>
     <tr>
       <th>Task</th>
