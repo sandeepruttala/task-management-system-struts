@@ -32,7 +32,7 @@
       border: none;
       border-collapse: separate;
       /*border-radius: 10px;*/
-      box-shadow: 3px 13px 5px 0px rgba(0, 0, 0, 0.2);
+      box-shadow: 3px 13px 5px 0 rgba(0, 0, 0, 0.2);
       padding: 8px;
       text-align: left;
     }
@@ -77,7 +77,7 @@
       padding: 8px;
       border-radius: 5px;
       border: 1px solid #ccc;
-      margin: 0px 10px;
+      margin: 0 10px;
       width: 10%;
       box-sizing: border-box;
     }
