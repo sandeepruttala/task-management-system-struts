@@ -4,108 +4,13 @@
 <%@ page import="models.Task" %>
 <html>
 <head>
-  <style>
-    h1, h2, h3, p {
-      text-align: center;
-      color: white;
-    }
-
-    body {
-      background-color: #323030;
-    }
-
-    table {
-      color: white;
-      border-radius: 10px;
-      border: none;
-      border-spacing: 0;
-      /*border: 1px solid #ddd; !* Added border style *!*/
-      margin-left: auto;
-      margin-right: auto;
-      border-collapse: separate;
-      width: 80%;
-      margin-bottom: 20px;
-      background-color: dimgray;
-    }
-
-    th, td {
-      border: none;
-      border-collapse: separate;
-      /*border-radius: 10px;*/
-      box-shadow: 3px 13px 5px 0 rgba(0, 0, 0, 0.2);
-      padding: 8px;
-      text-align: left;
-    }
-    th {
-      -moz-border-radius-topleft:10px;
-      -moz-border-radius-topright:10px ;
-      background-color: #009dff;
-      color: #fff;
-    }
-
-    .task-form {
-      display: none;
-      width: 80%;
-      margin: 10px auto 10px;
-
-      padding: 20px;
-      border-radius: 10px;
-      background-color: #616161;
-    }
-
-    .form-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 15px;
-    }
-
-    label {
-      flex: 1;
-      margin-left: 10px;
-      margin-right: 10px;
-    }
-
-    input[type="text"],
-    textarea,
-    select,
-    select[type='option'],
-    input[type="datetime-local"],
-    button {
-      color: black;
-      flex: 2;
-      padding: 8px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      margin: 0 10px;
-      width: 10%;
-      box-sizing: border-box;
-    }
-
-    button {
-      background-color: #007bff;
-      color: #fff;
-      width: 10%;
-        margin: auto;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      border: none;
-      cursor: pointer;
-      font-size: 14px;
-      padding: 5px 10px;
-    }
-
-    button:hover {
-      background-color: #0056b3;
-    }
-  </style>
   <title>Task Management System</title>
+  <link href="global.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <h1>Task Management System</h1>
-
 <div>
+    <button onclick="showForm()" id="addButton">Add Task</button>
   <h2>List of Pending Tasks</h2>
   <table>
     <tr>
@@ -126,7 +31,7 @@
       <td><%= task.getPriority() %></td>
       <td><%= task.getDueDate() %></td>
       <td><a href="completeTask?taskId=<%= task.getId() %>">Mark as Completed</a></td>
-      <td><a href="deleteTask?taskId=<%= task.getId() %>">Delete</a></td>
+      <td><a class="delete" href="deleteTask?taskId=<%= task.getId() %>">Delete</a></td>
     </tr>
     <%
       }
@@ -135,9 +40,9 @@
 </div>
 
 <div>
-  <button onclick="showForm()" id="addButton">Add Task</button>
   <div id="createForm" class="task-form">
     <form action="addTask" method="post">
+      <h2>Add Task</h2>
       <div class="form-row">
         <label for="task-name">Task Name:</label>
         <input type="text" id="task-name" name="taskName" required>
@@ -157,7 +62,6 @@
         <label for="task-status">Task Status:</label>
         <select id="task-status" name="taskStatus">
           <option value="todo">To Do</option>
-          <option value="in-progress">In Progress</option>
           <option value="completed">Completed</option>
         </select>
 
@@ -166,13 +70,14 @@
       </div>
 
       <div class="form-row">
-        <button type="submit" style="width: 10%" class="submit-btn">Submit</button>
+        <button type="submit" class="submit-btn">Submit</button>
+        <button onclick="closeForm()">Cancel</button>
       </div>
     </form>
   </div>
 </div>
 
-<h3>List of Completed Tasks</h3>
+<h2>List of Completed Tasks</h2>
 <table>
   <tr>
     <th>Task</th>
@@ -208,6 +113,12 @@
       document.getElementById("addButton").innerHTML = "Hide Form";
     }
   }
+
+  function closeForm() {
+    const form = document.getElementById("createForm");
+    form.style.display = "none";
+    document.getElementById("addButton").innerHTML = "Add Task";
+    }
 </script>
 
 </body>
